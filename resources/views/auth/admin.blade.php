@@ -46,6 +46,7 @@
                         <a href="{{ route('admin.show', $house->id) }}" class="btn btn-outline-info m-2">Show</a>
                         <a href="{{ route('admin.edit', $house->id) }}" class="btn btn-outline-primary m-2">modify</a>
                         @if (Auth::user() == null)
+                        {{-- non fare niente --}}
                         @elseif (Auth::user()->hasRole('admin'))
                             <a href="{{ route('admin.destroy', $house->id) }}" class="btn btn-outline-danger m-2">delete</a>
                         @endif

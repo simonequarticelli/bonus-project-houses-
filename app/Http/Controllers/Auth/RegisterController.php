@@ -72,13 +72,15 @@ class RegisterController extends Controller
         ]);
 
         // Initiate the 'member' Role
-        $member = Role::where( 'name', '=', 'guest' )->first();
+        $member = Role::where( 'name', '=', 'auth' )->first();
         // Give each new user the role of 'member'
         $user->attachRole( $member );
 
         // Return the new user with member role attached
         return $user; //<<Or whatever you do next with your new user
     }
+
+
 
     public function redirectTo(){
         

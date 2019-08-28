@@ -33,9 +33,7 @@ const app = new Vue({
     el: '#app',
 });
 
-// ldfijgjilglijjildjdjljllddgijf
-// wewe
-// ciao 
+
 $(document).on('click', '.ap-suggestions', function(){
 
     var city = $(this).text();

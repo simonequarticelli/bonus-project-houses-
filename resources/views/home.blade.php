@@ -8,7 +8,6 @@
 
         {{-- questa è la view per GUEST e per utente non loggato --}}
         <div class="container">
-       {{-- questo è un commento di test di ferdy --}}
             @foreach ($data as $house)
                 <div class="content m-3 d-inline-block">
                     <div class="card bg-light mb-3" style="width: 18rem; height: 400px;">
