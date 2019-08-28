@@ -26,5 +26,6 @@ class housesTableSeeder extends Seeder
             $house->slug = Str::slug($house->name);
             $house->save();
         }
+
     }
 }
