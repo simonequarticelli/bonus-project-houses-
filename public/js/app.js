@@ -59761,22 +59761,23 @@ $(document).on('click', '.ap-suggestions', function () {
     'success': function success(data) {
       //console.log(data.hits);
       //console.log(data);
-      var info = data.hits;
-      console.log(info);
-      var array_geo = [];
+      var info = data.hits; //console.log(info);
 
       for (var i = 0; i < info.length; i++) {
         var data = info[i]; //console.log(data._geoloc);
 
-        var geo = data._geoloc; //console.log(data.objectID);
-
-        array_geo.push(geo);
+        var geo = data._geoloc; //console.log(geo);
 
         for (var field in geo) {
-          var prova = geo[field]; //console.log(prova);
-        }
-      } //console.log(array_geo);
+          console.log([field]);
 
+          if ([field] == 'lat') {
+            $('#lat').val(geo[field]);
+          } else if ([field] == 'lng') {
+            $('#lng').val(geo[field]);
+          }
+        }
+      }
     },
     'error': function error(_error) {
       alert(_error);

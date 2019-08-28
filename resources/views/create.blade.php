@@ -25,8 +25,11 @@
 
 
             <div class="form-group">
-                <input name="geo" type="search" id="address-input" placeholder="Where are we going?">
+                <input name="city" type="search" id="address-input" placeholder="Where are we going?">
             </div>
+
+            <input id="lat" name="longitude" type="text" hidden>
+            <input id="lng" name="latitude" type="text" hidden>
     
             <button type="submit" class="btn btn-primary">create</button>
 

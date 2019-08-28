@@ -33,65 +33,58 @@ const app = new Vue({
     el: '#app',
 });
 
+// ldfijgjilglijjildjdjljllddgijf
 
 $(document).on('click', '.ap-suggestions', function(){
 
-
-
-        var city = $(this).text();
+    var city = $(this).text();
         //console.log(city);
 
-        // chiamata ajax per la latitudine e la longitudine
-        $.ajax({
-            'url':'https://places-dsn.algolia.net/1/places/query',
+    $.ajax({
+        'url':'https://places-dsn.algolia.net/1/places/query',
 
-            'method': 'GET',
+        'method': 'GET',
 
-            'data':{
-                'X-Algolia-Application-Id': 'plHY9UTOIKXX',
-                'X-Algolia-API-Key': 'b1c9ff4767e9c175969b8e601ced129d',
-                'hitsPerPage': '1',
-                'language': 'it',
-                'query': city,
-            },
-            'success': function(data){
-                //console.log(data.hits);
-
-                //console.log(data);
-
-
-                var info = data.hits;
-
-                console.log(info);
+        'data':{
+            'X-Algolia-Application-Id': 'plHY9UTOIKXX',
+            'X-Algolia-API-Key': 'b1c9ff4767e9c175969b8e601ced129d',
+            'hitsPerPage': '1',
+            'language': 'it',
+            'query': city,
+        },
+        'success': function(data){
+            //console.log(data.hits);
+            //console.log(data);
+            var info = data.hits;
+            //console.log(info);
 
 
-                var array_geo = [];
+            for (var i = 0; i < info.length; i++) {
+                var data = info[i];
+                //console.log(data._geoloc);
+                var geo = data._geoloc;
+                //console.log(geo);
 
-                for (var i = 0; i < info.length; i++) {
-                    var data = info[i];
-                    //console.log(data._geoloc);
-                    var geo = data._geoloc;
-                    //console.log(data.objectID);
+                for (var field in geo) {
+                    //console.log([field]);
 
-                    array_geo.push(geo);
+                    if ([field] == 'lat') {
 
-                    for (var field in geo) {
+                        $('#lat').val(geo[field]);
 
-                        var prova = geo[field];
-                        //console.log(prova);
+                    }else if ([field] == 'lng'){
+
+                        $('#lng').val(geo[field]);
                     }
+
                 }
-
-
-                //console.log(array_geo);
-
-
-            },
-            'error': function(error){
-                alert(error);
             }
-        });
 
+        },
+        'error': function(error){
+            alert(error);
+        }
+    });
 
 });
 
