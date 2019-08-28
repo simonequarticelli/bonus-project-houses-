@@ -36,17 +36,17 @@ const app = new Vue({
 
 $(document).on('click', '.ap-suggestions', function(){
 
-    
+
 
         var city = $(this).text();
         //console.log(city);
-        
 
+        // chiamata ajax per la latitudine e la longitudine
         $.ajax({
             'url':'https://places-dsn.algolia.net/1/places/query',
 
             'method': 'GET',
-            
+
             'data':{
                 'X-Algolia-Application-Id': 'plHY9UTOIKXX',
                 'X-Algolia-API-Key': 'b1c9ff4767e9c175969b8e601ced129d',
@@ -58,13 +58,13 @@ $(document).on('click', '.ap-suggestions', function(){
                 //console.log(data.hits);
 
                 //console.log(data);
-                
+
 
                 var info = data.hits;
 
                 console.log(info);
-                
-                
+
+
                 var array_geo = [];
 
                 for (var i = 0; i < info.length; i++) {
@@ -74,25 +74,25 @@ $(document).on('click', '.ap-suggestions', function(){
                     //console.log(data.objectID);
 
                     array_geo.push(geo);
-                    
+
                     for (var field in geo) {
-                       
-                        var prova = geo[field]; 
+
+                        var prova = geo[field];
                         //console.log(prova);
                     }
                 }
 
-                
+
                 //console.log(array_geo);
-                
-                
+
+
             },
             'error': function(error){
                 alert(error);
             }
         });
-    
-    
+
+
 });
 
 
