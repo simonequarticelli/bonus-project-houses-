@@ -32,3 +32,48 @@ class CreateHousesTable extends Migration
         Schema::dropIfExists('houses');
     }
 }
+
+
+
+
+
+
+
+
+
+
+// Schema::create('users', function (Blueprint $table) {
+//     $table->bigIncrements('id');
+//     $table->string('name', 100)->nullable();
+//     $table->string('surname', 100)->nullable();
+//     $table->string('mail')->unique();
+//     $table->string('password');
+//     $table->date('data_of_bird')->nullable();
+// });
+
+// Schema::create('houses', function (Blueprint $table) {
+//     $table->bigIncrements('id');
+//     $table->string('title', 100);
+//     $table->tinyInteger('bads');
+//     $table->tinyInteger('wc');
+//     $table->smallInteger('mq');
+//     $table->string('address');
+//     $table->float('longitude', 6,4);
+//     $table->float('latitude', 6,4);
+//     $table->text('img');
+// });
+
+// Schema::create('features', function (Blueprint $table) {
+//     $table->bigIncrements('id');
+//     $table->string('name', 100);
+// });
+
+// Schema::create('promotions', function (Blueprint $table) {
+//     $table->bigIncrements('id');
+//     $table->string('type', 100);
+// });
+
+// Schema::create('payments', function (Blueprint $table) {
+//     $table->bigIncrements('id');
+//     $table->float('type', 3, 2);
+// });

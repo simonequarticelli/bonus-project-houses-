@@ -10,6 +10,8 @@ class HouseController extends Controller
 {
     public function __construct() {
         $this->middleware('role:admin|auth');
+        // per vedere tutto hai bisogno del permesso all 
+        // eccetto per queste view -> ['index', 'show', 'edit']
         $this->middleware('permission:all')->except(['index', 'show', 'edit']);
     }
 
@@ -27,9 +29,10 @@ class HouseController extends Controller
 
     
     public function store(Request $request)
-    {
+    {   
+        // dd($request);
         $data = $request->all();
-        // dd($data);
+        dd($data);
         $img = Storage::put('upload_file', $data['img']);
         // dd($img);
         $new_house = new House();

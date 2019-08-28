@@ -9,10 +9,10 @@
                 <label>Name</label>
                 <input type="text" class="form-control" placeholder="name" name="name">
             </div>
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label>City</label>
                 <input type="text" class="form-control" placeholder="city" name="city">
-            </div>
+            </div> --}}
             <div class="form-group">
                 <label>Price in €</label>
                 <input type="number" class="form-control" placeholder="price" name="price">
@@ -22,9 +22,19 @@
                 <label>Add image</label>
                 <input type="file" name="img" class="form-control-file">
             </div>
-        
+
+
+            <div class="form-group">
+                <input name="geo" type="search" id="address-input" placeholder="Where are we going?">
+            </div>
+    
             <button type="submit" class="btn btn-primary">create</button>
+
+            
         </form>
+
+       
+
     </div>
     
     

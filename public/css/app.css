@@ -10644,3 +10644,9 @@ a.text-dark:focus {
   }
 }
 
+/* elimino l'icona azzurra di chiusura  */
+
+[type=search]::-webkit-search-cancel-button {
+  display: none;
+}
+
